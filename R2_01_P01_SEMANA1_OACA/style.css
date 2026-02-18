@@ -1,0 +1,90 @@
+:root {
+    --pomo-bg: #ffb7c5;
+    --short-bg: #c1e7e3;
+    --long-bg: #c2d4ee;
+    --text-color: #5d5d5d;
+    --card-bg: rgba(255, 255, 255, 0.4);
+}
+
+* { box-sizing: border-box; transition: all 0.5s ease; }
+
+body {
+    margin: 0; padding: 0;
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+body.mode-pomo { background-color: var(--pomo-bg); }
+body.mode-short { background-color: var(--short-bg); }
+body.mode-long { background-color: var(--long-bg); }
+
+.main-container { width: 100%; max-width: 450px; padding: 20px; }
+
+.timer-card {
+    background: var(--card-bg);
+    padding: 30px; border-radius: 30px;
+    backdrop-filter: blur(10px); text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modes { display: flex; justify-content: center; gap: 10px; margin-bottom: 10px; }
+
+.mode-btn {
+    background: none; border: none; cursor: pointer;
+    padding: 8px 15px; border-radius: 12px;
+}
+
+.mode-btn.active { background: rgba(0, 0, 0, 0.1); font-weight: 600; }
+
+.timer-display {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px; font-weight: 700;
+    margin: 15px 0; color: white;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Alineación de botones */
+.main-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los botones */
+}
+
+.main-button {
+    background: white; border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px; font-weight: 700;
+    padding: 15px 40px; border-radius: 15px;
+    cursor: pointer; box-shadow: 0 6px 0 rgba(0,0,0,0.1);
+    text-transform: uppercase;
+}
+
+.icon-button {
+    background: white; border: none;
+    width: 50px; height: 50px; border-radius: 15px;
+    font-size: 1.5rem; cursor: pointer;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+    display: flex; align-items: center; justify-content: center;
+}
+
+.icon-button:active, .main-button:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+}
+
+.hidden { visibility: hidden; pointer-events: none; }
+
+/* Info y Tareas */
+.info-section { text-align: center; margin: 25px 0; color: white; }
+.tasks-container { border-top: 1px solid rgba(255,255,255,0.5); padding-top: 20px; color: white; }
+.task-item {
+    background: white; color: var(--text-color);
+    padding: 15px; border-radius: 15px; margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.add-task-btn {
+    background: rgba(0,0,0,0.05); border: 2px dashed rgba(255,255,255,0.6);
+    padding: 15px; border-radius: 15px; text-align: center; cursor: pointer;
+}
